@@ -2,7 +2,7 @@
 
 <head>
 
-	<title>Hour of Code--Python Adventure</title>
+	<title>How to make a Minecraft Mod</title>
 
 	<link rel="stylesheet" type="text/css" href="main.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -16,8 +16,8 @@
 
 	<div id="title">
 
-		
-			<p>How to Make an Text Adventure Game in Python by Knodemy</p>
+
+			<p>How to make a Minecraft Mod</p>
 
 	</div>
 
@@ -33,15 +33,15 @@
 			<button class="next" type="button" onclick="next(1)">Next</button>
             <br><br>
 				<p>
-				Welcome to Knodemy's Hour of Code, where you will learn to make a text adventure game in Python! This tutorial is made to run on a 13" screen or larger.
+				Welcome to Knodemy's tutorial on how to make a Minecraft mod! This tutorial is made to run on a 13" screen or larger.
             </p>
             <br><br>
-				To the right you will see the Knodemy Python code editor. This is where you will be writing your code.<br>
+				To the right you will see the Knodemy Java code editor. This is where you will be writing your code.<br>
                 In order to run code scroll down in the editor section untill you see the green button. <br>
-                This is the run button and you will press it to run your code.<br>
+                  This is the run button and you will press it to run your code.<br>
                 Below the run button there is a grey area which is where the output of your code will be displayed.<br>
 				<br><br>
-				 
+
             <div class="card">
 				<br><br>
             Copy the code in the textbox below and paste it into the editor (<a target = "_blank" href="screenshots/copypasta.gif">How?</a>)
@@ -88,420 +88,210 @@ while(playagain):
             Go ahead and press the green button to run your code and play the game we will be making. After you're done press next to go to the next step.
                 </div>
 		</div>
+
+        <!--Begin first block of Minecraft Mod -->
+
 		<div class = "dir">
-			<p class = "step">1 - Printing...</p>
+			<p class = "step">1 - Creating a Constructor</p>
 			<button class="next" type="button" onclick="next(2)">Next</button>
 			<button class="previous" onclick="previous(2)">Prev.</button>
                 <br><br><br>
-				Okay, lets get started learing Python!
+				Okay, lets get started learning to mod!
                 <br><br>
-                First we're going to start off by doing something all programmers do when they first learn a computer language: display the words
-                "Hello world".
+                Here we have our blank Block class. We need to create a constructor, so that Minecraft knows what to do when we craft this block. To do this we will create a constructor. A constructor describes what to do every time our block is created in the game. In the constructor we will describe the basics details of the trampoline block.
 				<br><br>
-				in Python we can do this by typing <br>
-                <center><b>print("Hello World")</b></center>
-                Python understands whats in between the quotes as text and then print() tells it to 
+				We can do this by creating a constructor.<br>
+                <center><b>public TrampolineBlock(){}</b></center>
 				<br><br>
 				<div class="card">
-                    
-                    delete the code from before and
+
+                    Delete the code from before and
                     <p>
                     try making your computer print something!<br><br>
-                    type <b>print(" ")</b> and write hello world in between the quotes (or what you want the computer to say).
+                    type <br>
+                        <b>public TrampolineBlock(){}</b>
+                    <br>
                     </p>
-                    <br> then click the green button to run your code.
-                    
+
+
                 </div>
 		</div>
 
-		<!--End intro-->
-
-
-		<!--Begin basic JavaScript Tutorials, Steps 1-5-->
-
             <div class = "dir">
-			<p class="step">2 - Varibles</p>
+			<p class="step">2 - Defining a Constructor </p>
 			<button class="next" type="button" onclick="next(3)">Next</button>
 			<button class="previous" onclick="previous(3)">Prev.</button>
 			<br><br><br>
-                <center><div style = "font-size:20;" ><strong>Varibles Hold Data</strong></div></center>
-            <div>
-                <div id ="">
-                    <center>
-                    This is how you construct a variable
-                    </center>
-                    <div id = "instructionpic" style="padding:5px">
-
-                        <b>sometext = "this will be stored"</b>
-                    </div>
-                </div>
+                First, we’ll inherit the qualities of an existing block. There is no need to make a completely new set of rules, so we will use the rules from another block, specifically from sand. We’re using sand, because it’s easy to break with just your hands. To do this we must call the constructor of the generic block to use the sand material.
                 <br>
-                <div id = "">
-                    <center>
-                     to use a varible's value you say it's name
-                    </center>
-                    <div id = "instructionpic" style="padding:5px">
-                        
-                        <b>print(sometext)</b>
-                        <br>#this will print out "this will be stored"
-                        <br>#you can even try it by copying these lines into the editor
-                    </div>
+                <center><b>super(Material.sand);</b></center>
+                <br>
+                Next we have to add our block to the GameRegistry. The GameRegistry organizes all of the blocks in the game and makes sure that each block has a different name. To register the game we will call the registerBlock function.
+                <br>
+                <br>
+                <center><b>GameRegistry.registerBlock(this, name);</b></center>
+                <div class="card">
+                    1. Add all of these lines to your constructor:
                     <br>
+                    		super(Material.sand);<br>
+		GameRegistry.registerBlock(this, name);<br>
                 </div>
-                    There are 2 types of variables you will be using <ul>
-                        <li>Strings<ul>
-                            <li>These are words or strings of characters</li>
-                            <li>Strings are constructed using quotation marks in the value (ex. "Hello World!")</li>
-                        </ul></li>
-                        <li>Booleans<ul>
-                            <li>These are special keywords that can be either <b>True</b> or <b>False</b></li>
-                            <li>don't worry about these kind of varibles for now we will go over them later</li>
-                        </ul></li>
-                    </ul>
+							</div>
+                <div class = "dir">
+			<p class = "step">3 - Finishing the Constructor</p>
+			<button class="next" type="button" onclick="next(4)">Next</button>
+			<button class="previous" onclick="previous(4)">Prev.</button>
+                <br><br><br>
+								<br>
+								You probably noticed that there is two different arguments inside the parentheses: this and name. <i>this</i> tells the GameRegistry that we are registering the block we are currently constructing, the trampoline. If you look above the constructor, you can see we declared a variable with the name TrampolineBlock.<i>name</i> gives the GameRegistry the name we want to use for the block.
+								<br>
+Also, we need to set the name of the block for the other parts of the game. To do that we just need this one line:
+								<br>
+								<br>
+								<center><b>setUnlocalizedName(name);</b></center>
+								<br>
+								<br>
+								Finally we will tell Minecraft where our block belongs in creative mod. You’ve probably noticed that there are different tabs in your creative inventory that make it easy to find the item or block you want. Since our trampoline is a block, we will put it in the block category.
+								<br>
+								<br>
+								<center><b>setCreativeTab(CreativeTabs.tabBlock);</b></center>
+								<br><div class="card">
+                    <p>!. Add these lines to your constructor.
+										setUnlocalizedName(name);<br>
+										setCreativeTab(CreativeTabs.tabBlock);<br>
+                    <br>
+                    </p>
+                </div>
+		</div>
 
-                Every command must be ended by pressing enter and going to the next line, which means that if you make a variable,
-                modify a variable, execute a function, and many more, you must press enter to go to the next line.
-                </div>
-                <br>
-                <div class="card">
-                    1. make a varible called <b>mytext</b> and store any piece of text in it.<br>
-                    2. print it out using the <b>print()</b> command.
-                </div>
-                
-                
-			</div>
-
+<!--Switch from Block class to Mod class.-->
 			<div class = "dir">
-				<p class="step">3 - Input</p>
-				<button class="next" onclick="next(4)">Next</button>
-				<button class="previous" onclick="previous(4)">Prev.</button>
-				<br> <br><br>
-                Next we're going to learn how to get input from the user(the user is the person running our program).
-                <br><br>
-                to use take input we write <b>raw_input()</b> .<br>
-                If you want to prompt the user with a specific piece of text put the string in between the parenthesis like so:<br> 
-                <b>raw_input("say something")</b>
-                <br><br>
-                you can store the input into a varible using the <b>=</b> sign.
-                <br> in Python you want to think of the <b>=</b> sign as an arrow pointing left &lt;= because what is on the right is being put into what is on the left.
-                
-                <br><br>
-                <div class="card">
-                    Try using <b>raw_input()</b> and a varible to store the value of what the user has entered. Then use <b>print()</b>
-                    to display it again on the output.
-                </div>
-			</div>
-
-			<div class = "dir">
-				<p class="step">4 - Game begins</p>
+				<p class="step">4 - Connecting the Block and Mod</p>
 				<button class="next" onclick="next(5)">Next</button>
 				<button class="previous" onclick="previous(5)">Prev.</button>
-				<br><br><br>
-                Okay, its finally time to get started on our game!<br><br>
-                The first thing our game needs to do is to tell the player what is going on in the game world.
-                We will do this by printing three different things. Next we'll use what we've learned about raw_input
-                to ask the player what the first thing they want to do is.
+				<br> <br><br>
+               Now we're going to work on the main mod class.
+                <br>
+                <br>
+                Our block has been created, but Minecraft does not know our block exists! As a result, we need to create a mod class to get the game’s attention. The Mod class’s purpose is to tell Minecraft about all the items and blocks in our mod and how to access those things. As you can see, there are already two functions in the file: preinit and init.
                 <br><br>
-                <center><b>feel free to go back to previous steps if you forgot something, your code won't change between steps.</b></center>
+                Before the Minecraft world loads up, we need to tell the game what our mod includes. That is what the the preinit function does; it tells Minecraft what blocks and items we are adding and puts them in the GameRegistry. In our preinit, we only need one line, because we only have one block. This line will create an instance of our block.
                 <br><br>
-                
+                <center><b>trampolineBlock = new TrampolineBlock();</b></center>
+                <br><br>
                 <div class="card">
-                    1. use <b>print()</b> to output these three pieces of text:
-                    <ul>
-                        <li>You are in a village.</li>
-                        <li>A dragon is attacking.</li>
-                        <li>Will you fight the dragon?</li>
-                    </ul>
-                    2. make a varible called <b>response</b> and use <b>raw_input()</b> and <b>=</b> to store value in. Also make <b>raw_input()</b>
-                    ask the user to <b>"enter y/n: "</b> to choose wheather or not to fight the dragon.
+                    Add this line to the preinit() function.<br>
+                    trampolineBlock = new TrampolineBlock();
                 </div>
-                
-            </div>
+			</div>
 
-            <div class = "dir">
-				<p class="step">5 - True or False</p>
+			<div class = "dir">
+				<p class="step">5 - Recipe Components</p>
 				<button class="next" onclick="next(6)">Next</button>
 				<button class="previous" onclick="previous(6)">Prev.</button>
 				<br><br><br>
-                So now that we have the player telling us what they want to do, how do we make our code react to that and change what it does based on 
-                what the player chooses?
-                <br><br>                
-                first we need to find out weather or not the player entered "y" or "n". We are going to check this by finding out
-                wheather or not the response is equal to "y" or "n". 
-                <br><br>
-                To check wheather something is equal to something in python we put <b>==</b> in between them. 
-                <center><b> 10*10 == 100 </b>#this becomes <b>True</b></center>
-                 <center><b> 1+1 == 3 </b>#this becomes <b>False</b></center>
-                If they are equal the computer
-                just replaces the whole thing with a <b>True</b> while the program is running or <b>False</b> if it isn't equal.
-                <br><br>
-                <div class="card">
-                Use the varible from the last step, <b>response</b> and <b>print()</b> weather or not it is equal to <b>"y"</b>
-                <br><br>
-                    hint: you can put the response == "y" inside the parenthesis of <b>print()</b>
-                </div>
-                
-            </div>
+                Next we have the init function. This is where the mod is set-up and where we will describe the recipe to create the trampoline block. First we need to define what will be created with this recipe. Obvioiusly we want to create the trampoline block.
+<br><br>
+<center><b>ItemStack i = new ItemStack(trampolineBlock)</b></center>
+<br><br>
+                Next, we need to describe the recipe. Those of you who have played Minecraft before know that the crafting table provides a 3 by 3 grid of squares to place ingredients in. We will define our recipe in as if it were a 3 by 3 grid.
+<br><br>
 
-            <div class = "dir">
-							<p class="step">6 - More True/False</p>
+                <div class="card">
+                    1. Create an ItemStack<br>
+                    ItemStack i = new ItemStack(trampolineBlock)<br>
+                </div>
+
+            </div>
+						<div class = "dir">
+							<p class="step">6 - Creating the Recipe </p>
 							<button class="next" onclick="next(7)">Next</button>
 							<button class="previous" onclick="previous(7)">Prev.</button>
 							<br><br><br>
-                            <center>
-                                <strong>Booleans hold one of two values: True or False</strong>
-                                <br><br>
-                                Booleans are usually created as a condition. <br>The one below has a value of False.
-                                <br>
-                                <div id="instructionpic" style = "margin-left:120px;margin-right:120px;">
-                                <img src="screenshots/boolean.png" height="120px"/>
-                                </div>
-                            </center>
-							<ul>
-								<li>Types of tests<ul>
-									<li>To check for equality, use two equal signs ==</li>
-                                    <li>For greater than and less than, use &gt; and &lt;, respectively</li>
-                                    <li>For greater than/less than or equal to, use &gt;= and &lt;=, respectively</li>
-                                    <li>For not equal to, use !=</li>
-								</ul>
-							</li>
-							</ul>
-                
-                            <div class="card">
-                                This step just has more information on the previous topic so read it and move on.
-                            </div>
-				</div>
-        
-            <div class = "dir">
-							<p class="step">7 - While Loops </p>
-							<button class="next" onclick="next(8)">Next</button>
-							<button class="previous" onclick="previous(8)">Prev.</button>
-							<br><br><br>
+			 <center><b>Object recipe = new Object[]{<br>
+			“PPP”,<br>
+			“PWP”,<br>
+			“PPP”,<br>
+			}
+			</b></center>
+			<br>
+			Notice I split up the recipe onto different lines, so it is easier to recognize as a 3 by 3 grid. Instead of writing out the name of each item, we are using the letters P and W to stand for wooden planks and wool, respectively. So our recipe stands for a block of wool, surrounded by wooden planks. Now that you understand that, we must tell Minecraft what our letters mean. These two elements go in the Object array after the last comma.
+			<br><br>
+			<center><b>'P', Blocks.planks, ‘W’, Blocks.wool</b></center>
+			<br><br>
+			                <div class="card">
+			                    1. Your recipe Object Array should look like this:<br>
+			                    Object recipe = new Object[]{<br>
+			“PPP”,<br>
+			“PWP”,<br>
+			“PPP”,<br>
+			'P', Blocks.planks, 'W', Blocks.wool<br>
+			}
+			                </div>
 
-                                <strong>While loops execute when a condition is true</strong>
-                                <br><br>
-                                While loops check a condition for truth at the end of each cycle,<br>and if it is true, all code inside the loop is executed again. <br>The one below removes the first item in the array if the first item is "banana".
-                                <br>
-                                <img src="screenshots/whileLoop.png" height="200px"/>
-                                <br>
-                                you can even compare two things at the same time by putting <b>and</b> in between 
-                                
-                                <br><br>
-                                <div class="card">Try making a while loop that changes fruit to "starfruit"</div>
-                            
-							
-				</div>
-
-            <div class = "dir">
-						<p class="step">8 - What if?</p>
-						<button class="next" onclick="next(9)">Next</button>
-						<button class="previous" onclick="previous(9)">Prev.</button>
-						<br><br><br>
-                        
-                                <strong>Conditional statements exectute if a condition is true/not true</strong>
-                                <br>
-                                <div id="instructionpic" style = "margin-left:15px;margin-right:15px;">
-                                <pre>if(response == "y"):
-    print("the player entered yes")
-else:
-    print("player didn't enter y")                     </pre>
-                                </div>      
-                
-                    If/else if/else statements are checked in the order they are written
-                <ol>
-                        <li>If the condition in the if statement is true, execute code in the if statement</li>
-                        <li>If the condition in the else if statement is true and ALL ABOVE conditions are false, execute code in that else if statement</li>
-                        <li>Repeat step 2 for however many else if statements</li>
-                        <li>If all conditions in ALL if and else if statements are false, execute code in the else statement</li>
-                    </ol>
-                <center>
-                <div class="card">Copy the code from above and change it to say <b>"the player entered no"</b> if the player typed <b>"n"</b></div>
-                </center>
-						
-			</div>
-
-            <div class = "dir">
-						<p class="step">9 - If, Elif</p>
-						<button class="next" onclick="next(10)">Next</button>
-						<button class="previous" onclick="previous(10)">Prev.</button>
-						<br><br><br>
-
-                                <strong>Conditional statements exectute if a condition is true/not true</strong>
-                                <br>
-                                <div id="instructionpic" style = "margin-left:15px;margin-right:15px;">
-                                <pre>if(response == "y"):
-    print("the player entered yes")
-elif(response == "n"):
-    print("the player did not enter yes")
-else:
-    print("player didn't enter y or n")                     </pre>
-                                 
-                                </div>      
-                    If/else if/else statements are checked in the order they are written
-                <ol>
-                        <li>If the condition in the if statement is true, execute code in the if statement</li>
-                        <li>If the condition in the else if statement is true and ALL ABOVE conditions are false, execute code in that else if statement</li>
-                        <li>Repeat step 2 for however many else if statements</li>
-                        <li>If all conditions in ALL if and else if statements are false, execute code in the else statement</li>
-                    </ol>
-                <center>
-                <div class="card">Copy the code from above and change it to say <b>"the player entered no"</b> if the player typed <b>"n"</b> and 
-                    try adding your own option if the player enters <b>"d"</b>.</div>
-                </center>
-			</div>
-        
-			<div class = "dir">
-				<p class="step">10 - Pause</p>
-				<button class="next" onclick="next(11)">Next</button>
-				<button class="previous" onclick="previous(11)">Prev.</button>
+			            </div>
+<div class = "dir">
+				<p class="step">7 - Finalizing the Recipe</p>
+				<button class="next" onclick="next(8)">Next</button>
+				<button class="previous" onclick="previous(8)">Prev.</button>
 				<br><br><br>
-				<div class="card">Congrats on reaching step 10! Take a moment to review the steps before if you were unsure about anything.
-                <br><br>
-                In the next step we'll be beggining to code the game in earnest so when you're ready press <b>Next</b> and dive in! 
+          Finally, we need to put the result and the recipe together and register them. Like before where we registered to block with the GameRegistry, we need to register our recipe with the GameRegistry using the ItemStack and Object array we just created.
+<br><br>
+<center><b>GameRegistry.addRecipe(i, recipe);</b></center>
+<br><br>
+That’s it! Our recipe is done!
+                <div class="card">
+                1.Register the recipe:<br>
+                    GameRegistry.addRecipe(i, recipe);<br>
+
                 </div>
-			</div>
 
-			<div class = "dir">
-				<p class="step">11 - Gameloop</p>
-				<button class="next" onclick="next(12)">Next</button>
-				<button class="previous" onclick="previous(12)">Prev.</button>
+            </div>
+            <div class = "dir">
+				<p class="step">8 - Bounciness</p>
+				<button class="next" onclick="next(9)">Next</button>
+				<button class="previous" onclick="previous(9)">Prev.</button>
 				<br><br><br>
-				Okay let's get started making our game now that we know all about loops and conditional statements. You can clear the code editor for now.
-				<br><br>
-                First lets go over the structure of our game, which will look something like this:
-				<br>
-				<ul>
-					<li>while loop that checks if game is over<ul>
-						<li>ask user if they want to fight a dragon<ul>
-							<li>if they say yes and dont have a sword<ul>
-								<li>lose</li></ul>
-                            </li>
-                             <li>if they say no</li>
-                                <ul><li>ask them if they want to go left or right</li>
-                                <ul><li>if they want to go left take them to the beginning</li>
-                                    <li>if they choose right give them a sword and go back to beginning </li>
-                                    
-                                    </ul>
-                                    </ul>
-                            <li>if they say yes and have a sword</li>
-                            <ul><li>win!</li></ul>
-						</ul></li>
-					</ul></li>
-				</ul>
-                <div class="card">Thats quite a lot to do! But don't worry we'll break it up into easier chunks for you.<br><br>
-                lets start by creating the varibles <b>playagain</b> which will start off <b>True</b> and <b>sword</b> which will start off 
-                <b>False</b>. Lets also make a print statement that prints out <b>"You are the great hero, Zain."</b> you can replace Zain with your name.
-                Finally make a <b>while():</b> loop and put <b>playagain</b> in the parenthesis. This will be our game's main loop.</div> 
-			</div>
-
-			<!--End basic JavaScript Tutorials, Steps 1-5-->
-
-
-			<!--Below is where user gets Snake code and learns how to save code-->
-
-			<div class = "dir">
-				<p class="step">12 - First if</p>
-				<button class="next" onclick="next(13)">Next</button>
-				<button class="previous" onclick="previous(13)">Prev.</button>
-				<br><br><br>
-                Next up we want to make the games intro and first decision. 
-                Start by copying the three lines below inside the while loop from the last step.
-				<br><pre>
-print("You are in a village.")
-print("A dragon is attacking.")
-print("Will you fight the dragon?")
-                </pre>
-                <div class="card">Make a varible <b>response</b> and store the value of<b>raw_input()</b>
-                put <b>"y/n :"</b> in between the parenthesis of raw_input to display it to the player
+                We have defined our block, added it to a mod, and created the recipe. Now to finish it off, we need to make it bouncy. On a trampoline, you can only bounce if you jump on it. So we need to call a function that will make the character bounce if you jump on it. The function we need is called <i>onFallenUpon</i>.<br><br>
+                We can create the function with this line of code:<br><br>
+                <center><b>public void onFallenUpon(World world, BlockPos bp,  Entity entity, float f){}</b></center>
                 <br><br>
-                    Next write a conditional statement to check how the player responded as well as
-                    wheather or not they have a sword.                    
-                    using <b> if(): elif():</b>  and<b> else:</b> leave the insides of each statement blank for now we'll do that in the next step
-                <br><br> Hint: the if statement will be checking <b>response == "y" and sword == False</b>
-                </div>
-                <br>
-
-			</div>
-
-
-			<!--End copying code/final introduction-->
-
-
-			<!--Begin actual Snake coding-->
-
-			<div class = "dir">
-				<p class="step">13 - Consiquences</p>
-				<button class="next" onclick="next(14)">Next</button>
-				<button class="previous" onclick="previous(14)">Prev.</button>
-				<br><br><br>
-                In this step you will write the consiquences of each desicision the player makes.
-                <br> If the player choose to fight the dragon and they don't have a sword to fight with
-                they will lose and we want the following code to run:
-                <pre>print("You tried to fight a dragon without a sword.")
-print("That was a bad choice, you lose.")
-playagain = False</pre>
-
-                However, if the player does have a sword and chooses "y" we want the following to run:
-                <pre>print("You have defeated the dragon!")
-print("You really are the great hero Zain.")
-print("You win!")
-playagain = False</pre>
-                Again, you can replace Zain with your name.
+                There are a lot of arguments there, but we only are worried about the entity. entity refers to any living thing that jumps on our trampoline block.
                 <br><br>
                 <div class="card">
-                    Take a moment to understand and copy the code above into the right place in
-                    your program.
-                    <br><br>
-                    next step we'll be filling up that <b>else:</b> condition so it's okay for that to be blank for now
+                1.Add the function <i>onFallenUpon</i>:<br>
+                    public void onFallenUpon(World world, BlockPos bp,  Entity entity, float f){}<br>
                 </div>
-			</div>
 
-			<div class = "dir">
-				<p class="step">13 - Or Else!</p>
-				<button class="next" onclick="next(15)">Finish!</button>
-				<button class="previous" onclick="previous(15)">Prev.</button>
+            </div>
+						<div class = "dir">
+				<p class="step">9 - Bounciness Continued!</p>
+				<button class="next" onclick="next(10)">Next</button>
+				<button class="previous" onclick="previous(10)">Prev.</button>
 				<br><br><br>
-                The last thing we need to do now is to write the part of the game where
-                our player can find the sword they need to fight the dragon and win!
-                <br><br>
-                Lets start by letting the player know that they can choose to go left or right. 
-                We'll do this by writing the following lines after the <b>else:</b> conditional.
-                <pre>print("There are two paths. Go (L)eft or (R)ight?")
-response = raw_input()</pre>
-                Now we just need to check which way the player chose and decide wheather or not to
-                give them the sword.
-                <br><br>
-                
-                <div class="card">
-                Start by writing the two lines of code from above after the <b>else:</b> conditional.
-                Next you need to check if the user entered <b>"L"</b> or <b>"R"</b> if they entered 
-                <b>"L"</b> then make them go back to the beginning. <br> because you are in a while loop you can do this by just using
-                <b>print() </b> with the strings <b> "You walk and..." </b> and <b>"You end up at the beginning of the story."</b>
-                <br><br>
-                Finally if the player entered "R", or basically went right. <b>print()</b> that they found the sword
-                and then change the value of <b>sword</b> to be <b>True</b>. After that you are done!
-                </div>
-                
-			</div>
+								To move the player, we will tell the entity to move itself using its moveEntity function. So inside the function's brackets, add this line.
+<br><br>
+<center><b>entity.moveEntity(entity.serverPosX, entity.serverPosY+5, entity.serverPosZ);</b></center>
+<br><br>
+As you can see, we refer to the entity many times in that line. we don’t want to move the player horizontally, so we do not change its server position on the x or z axes. The y-position or its vertical position is what we want to change, so we add five to its current position.
+								<br><br>
+								<div class="card">
+										2.Call the <i>moveEntity</i> function from that function:<br>
+										entity.moveEntity(entity.serverPosX, entity.serverPosY+5, entity.serverPosZ);<br>
 
+								</div>
 
-				<!--End actual Snake coding-->
-
-
+						</div>
 				<!--Begin last word, goodbye-->
 
             <div class = "dir">
 					<p class="step">You're Done!</p>
 					<button class="previous" type="button" onclick="step1()">Beginning</button>
-                    <button class="previous" type="button" onclick="previous(16)">Prev.</button>
+                    <button class="previous" type="button" onclick="previous(11)">Prev.</button>
 					<br><br>
-				    Congratulations on finishing your Adventure Game!
+				    Congratulations on finishing your first Minecraft Mod!
 					<br><br>
-					 We recommend you saving your code to a text file on your computer so that you can copy and play it later if you want (it will go away once you close the browser)
-					<br><br>
-					Great job on finishing your Hour of Code project! We hope you had a great time and at the same time learned a lot about programming in Python. Thank you for learning with us for an hour and we hope to see you next year!
-                    <br><br>
-                If you would like to learn more about how to code the other parts of the game that you did not do in this session, feel free to contact knodemy at <a target = "_blank" href="knodemy.com">our website</a>, and we will give you lessons on more advanced coding.
+                If you would like to learn more about how to code more mods that you did not do in this session, feel free to contact knodemy at <a target = "_blank" href="knodemy.com">our website</a>, and we will give you lessons on more advanced coding.
 				</div>
 
 
@@ -514,11 +304,11 @@ response = raw_input()</pre>
     var x = "this is some cool java code";
     System.out.println(x);
 }</div>
-    
+
 <script src="ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
     var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/solarized_dark");
+    editor.setTheme("ace/theme/monokai");
     editor.getSession().setMode("ace/mode/java");
     editor.setOptions({fontSize: "1em"});
 </script>
