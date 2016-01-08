@@ -18,3 +18,7 @@ function step1(){
 	document.getElementsByClassName("dir")[document.getElementsByClassName("dir").length-1].style.display = "none";
 	previous(2);
 }
+
+function submitCode(){
+	console.log(editor.getValue());
+}
