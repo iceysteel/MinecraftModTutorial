@@ -1,8 +1,4 @@
-//
-// # SimpleServer
-//
-// A simple chat server using Socket.IO, Express, and Async.
-//
+var fs = require("fs")
 var http = require('http');
 var path = require('path');
 
@@ -25,6 +21,31 @@ var messages = [];
 var sockets = [];
 
 io.on('connection', function (socket) {
+    //user's unique id
+    sockets.push(socket);
+    
+    console.log(socket.id);
+    
+    
+    socket.on('code submit', function(code) {
+        console.log("got code");
+        //do something with the code
+        console.log("Going to create directory "+ __dirname + "/tmp/" + socket.id);
+        
+        fs.mkdir(__dirname + '/tmp/' + socket.id ,function(err){
+           if (err) {
+               return console.error(err);
+           }
+           console.log("Directory created successfully!");
+        });
+    });
+    
+    socket.on('disconnect', function () {
+      sockets.splice(sockets.indexOf(socket), 1);
+    });
+    
+    //old code, will be discarded
+    /*
     messages.forEach(function (data) {
       socket.emit('message', data);
     });
@@ -58,6 +79,8 @@ io.on('connection', function (socket) {
         updateRoster();
       });
     });
+    */
+    
   });
 
 
