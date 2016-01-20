@@ -1,0 +1,477 @@
+<html>
+
+<head>
+
+	<title>Hour of Code--Python Adventure</title>
+
+	<link rel="stylesheet" type="text/css" href="main.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<script src="script.js"></script>
+
+</head>
+
+
+
+<body onload="load()">
+
+	<div id="title">
+
+		
+			<p>How to Make an Text Adventure Game in Python by Knodemy</p>
+
+	</div>
+
+
+
+	<div id="instructions">
+
+
+		<!--Intro step, description/overview-->
+
+		<div class = "dir">
+			<p class="step">Before You Start</p>
+			<button class="next" type="button" onclick="next(1)">Next</button>
+            <br><br>
+				<p>
+				Welcome to Part 1 of Knodemy's Minecraft modding tutorial, where you will learn to do basic coding in java.
+            </p>
+            <br><br>
+				To the right you will see the Knodemy Java code editor. This is where you will be writing your code.<br>
+                In order to run code scroll down in the editor section untill you see the green button. <br>
+                This is the run button and you will press it to run your code.<br>
+                Below the run button there is a grey area which is where the output of your code will be displayed.<br>
+				<br><br>
+		</div>
+		<div class = "dir">
+			<p class = "step">1 - Printing...</p>
+			<button class="next" type="button" onclick="next(2)">Next</button>
+			<button class="previous" onclick="previous(2)">Prev.</button>
+                <br><br><br>
+				Okay, lets get started learing Java!
+                <br><br>
+                First we're going to start off by doing something all programmers do when they first learn a computer language: display the words
+                "Hello world".
+				<br><br>
+				In Java we can do this by typing <br>
+                <center><b>System.out.println("Hello World");</b></center>
+                Java understands whats in between the quotes as text and then println() tells it to print that text
+				<br><br>
+				<div class="card">
+                    <p>
+                    Try making your computer print something!<br><br>
+                    Type <b>print(" ")</b> and write hello world in between the quotes (or what you want the computer to say).
+                    </p>
+                    <br> Then click the green button to run your code.
+                </div>
+                As you probably have noticed, the code usually has 2-3 parts. The part that includes all the code is called the class. The part that has the format <b>public className</b> constructs the class (usually not needed in basic code, but we will use this). The other part that has the format <b>public static void main(String[] args)</b> is where all the code that is executed is placed. If your text did not print, check that it's inside the brackets associated with the <b>main</b>.
+		</div>
+
+		<!--End intro-->
+
+
+		<!--Begin basic JavaScript Tutorials, Steps 1-5-->
+
+            <div class = "dir">
+			<p class="step">2 - Variables</p>
+			<button class="next" type="button" onclick="next(3)">Next</button>
+			<button class="previous" onclick="previous(3)">Prev.</button>
+			<br><br>
+                <center><div style = "font-size:15;" ><strong>Variables Hold Data</strong></div></center>
+            <div>
+                <div id ="">
+                    <center>
+                    This is how you construct a variable
+                    </center>
+                    <div id = "instructionpic" style="padding:5px">
+
+                        <b> String sometext = "this will be stored"</b>
+                    </div>
+                </div>
+                <br>
+                <div id = "">
+                    <center>
+                     To use a variable's value you say it's name
+                    </center>
+                    <div id = "instructionpic" style="padding:5px">
+                        
+                        <b>System.out.println(sometext)</b>
+                        <br>//this will print out "this will be stored"
+                    </div>
+                    <br>
+                </div>
+                    There are 3 types of variables you will be using <ul>
+                        <li>Strings<ul>
+                            <li>These are words or strings of characters</li>
+                            <li>Strings are constructed using <b>String</b> and quotation marks in the value (example above)</li>
+                        </ul></li>
+                        <li>Booleans<ul>
+                            <li>These are special keywords that can be either <b>True</b> or <b>False</b></li>
+                            <li>Don't worry about these kind of variables for now we will go over them later</li>
+                        </ul></li>
+                        <li>Integers/Doubles<ul>
+                            <li>These are numbers. <b>Integers</b> don't have decimals. <b>Doubles</b> can have decimals.</li>
+                            <li>These are constructed with <b>int</b> and <b>double</b> respectively.</li>
+                        </ul></li>
+                    </ul>
+
+                Every command must be ended with a semicolon (<b>;</b>), which means that if you make a variable,
+                modify a variable, execute a function, and many more, you must end the command with a semicolon.
+                </div>
+                
+			</div>
+
+			<div class = "dir">
+				<p class="step">3 - Operations</p>
+				<button class="next" onclick="next(4)">Next</button>
+				<button class="previous" onclick="previous(4)">Prev.</button>
+				<br> <br>
+                Next we're going to learn how to use variables
+                <br><br>
+                You can change the value of a variable by setting it equal to a different value
+                <br>
+                <div id = "instructionpic" style="padding:5px">
+
+                        <b> int i = 6;<br>
+                            i = 3;
+                    </b>
+                    </div>
+                <br>
+                With integers and doubles (the main variables you will use), you can add (+), subtract (-), multiply(*), and divide(/). 
+                <div id = "instructionpic" style="padding:5px">
+
+                        <b> int i = 6;<br>
+                            i = i*3;
+                            //this makes i equal to 18
+                    </b>
+                    </div>
+                <br><br>
+                <div class="card">
+                    Try making a <b>double</b> with an odd <b>integer</b> value. 
+                    <br>
+                    Then, divide it by 2 and print the result.
+                    <br><br>
+                    How is this different than if you made the initial variable an integer? Why?
+                </div>
+			</div>
+
+			<div class = "dir">
+				<p class="step">4 - Conditionals</p>
+				<button class="next" onclick="next(5)">Next</button>
+				<button class="previous" onclick="previous(5)">Prev.</button>
+				<br><br><br>
+                Now, we will learn more about <b>booleans</b>.
+                <br><br>
+                <b>Booleans</b> can have 1 of 2 states: <b>True</b> or <b>False</b>.
+                <br><br>
+                These are used to compare numbers with the following comparisons
+                <ul>
+                    <li>== equal to</li>
+                    <li>&lt; less than</li>
+                    <li>&gt; greater than</li>
+                    <li>&lt;= less than or equal to</li>
+                    <li>&gt;= greater than or equal to</li>
+                    <li>!= not equal to</li> 
+                </ul>
+                <div id = "instructionpic" style="padding:5px">
+
+                        <b> boolean bool = (1 != 3-2);
+                    </b>
+                    </div>
+                <div class="card">
+                    1. Make a boolean that is equal to a comparison between 2 numbers<br>
+                    Make sure that your comparison is in parentheses
+                    2. Print the boolean<br>
+                    3. Try combining many booleans with "and" (<b>&amp;&amp;</b>) or "or" (<b>||</b>) and see what they end up as
+                </div>
+                
+            </div>
+
+            <div class = "dir">
+				<p class="step">5 - While Loops</p>
+				<button class="next" onclick="next(6)">Next</button>
+				<button class="previous" onclick="previous(6)">Prev.</button>
+				<br><br><br>
+                While loops loop a portion of the code as long as a condition is true
+                They take the format
+                <div id = "instructionpic" style="padding:5px">
+
+                        <b> int i = 0;<br>
+                            while(i&lt;5){ <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i++;<br>
+                            }<br>
+                            // this makes int i add one to itself until i is not less than 5
+                    </b>
+                    </div>
+                As you can see, the while loop has 
+                <ol>
+                    <li>Lines of code before it to initiate some variables (not necessarily needed)</li>
+                    <li>The construction of the while loop</li>
+                    <li>The conditional</li>
+                    <li>And the code looped</li>
+                </ol>
+                <div class="card">
+                    1. Initiate your code by making an integer named "count" <br>
+                    2. Make a while loop that prints the integer count and increase it by 1 after printing
+                </div>
+                
+            </div>
+
+            <div class = "dir">
+							<p class="step">6 - For loops</p>
+							<button class="next" onclick="next(7)">Next</button>
+							<button class="previous" onclick="previous(7)">Prev.</button>
+							<br><br><br>
+                            For loops loop a portion of the code a certain number of times
+                            They take the format
+                            <div id = "instructionpic" style="padding:5px">
+
+                        <b> for(int i = 0; i&lt;5; i++){ <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println(i);<br>
+                            }<br>
+                    </b>
+                    </div>
+                As you can see, the for loop has 3 things inside the parentheses
+                <ol>
+                    <li>Initiated variable</li>
+                    <li>Conditional</li>
+                    <li>counter</li>
+                </ol>
+                
+                The purpose of the counter is so that you don't forget to add it at the end of the looped code. The rest of the loop has the same format as the while loop
+                <br><br>
+                The above for loop does the exact same thing as the task with while loops
+                            <div class="card">
+                                1. Make a for loop inside a for loop so that each loop will loop 4 times<br>
+                                2. The code for the inside of the inner for loop will be printing out the multiplied value of the two integers initiated in the for loops<Br><br>
+                                How many times does it print? Why?
+                            </div>
+				</div>
+        
+            <div class = "dir">
+							<p class="step">7 - If/else if/else </p>
+							<button class="next" onclick="next(8)">Next</button>
+							<button class="previous" onclick="previous(8)">Prev.</button>
+							<br><br><br>
+
+                                <strong>Conditional statements exectute if a condition is true/not true</strong>
+                                <br>
+                                <div id="instructionpic" style = "margin-left:15px;margin-right:15px;padding-left:15px;">
+                                    <b>
+                                        <br>
+                                    if(x &lt; 4){<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x++; <br>
+                                    }<br>
+                                    elif(x==4){<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x=0; <br>
+                                    }<br>
+                                    else{<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x--;<br>
+                                    }
+                                        <br>
+                                        <br>
+                                    </b>
+                                    
+                                </div>      
+                    If/else if/else statements are checked in the order they are written and only execute once
+                <ol>
+                        <li>If the condition in the if statement is true, execute code in the if statement</li>
+                        <li>If the condition in the else if statement is true and ALL ABOVE conditions are false, execute code in that else if statement</li>
+                        <li>Repeat step 2 for however many else if statements</li>
+                        <li>If all conditions in ALL if and else if statements are false, execute code in the else statement</li>
+                    </ol>
+                                <div class="card">Make an if/else if/else statement inside a for loop so that when the counter satisfies a condition, break the loop.</div>
+                            
+							
+				</div>
+
+            <div class = "dir">
+						<p class="step">8 - Object Oriented Design</p>
+						<button class="next" onclick="next(9)">Next</button>
+						<button class="previous" onclick="previous(9)">Prev.</button>
+						<br><br><br>
+                        
+                <center><strong>Java is an <i>Object Oriented</i> programming language</strong></center>
+                                <br>
+                <br>
+                Every variable you have used so far is an object, and generally, each object has its own class.
+                <br><br>
+                There are 3 things associated with objects
+                <ul>
+                    <li>Constructors</li>
+                    <li>Methods</li>
+                    <li>Fields</li>
+                </ul>
+                                
+                <div class="card">This is just an introduction to making functions in classes. Move on after you understand that Java programming is made of objects.
+			</div>
+                </div>
+
+            <div class = "dir">
+						<p class="step">9 - Class structure</p>
+						<button class="next" onclick="next(10)">Next</button>
+						<button class="previous" onclick="previous(10)">Prev.</button>
+						<br><br><br>
+
+                                <center><strong>Classes are organized into fields, constructors, and methods</strong></center>
+                                <br>
+                                <div id="instructionpic" style = "margin-left:15px;margin-right:15px;">
+                                <pre>public class Sword {
+    int durability, damage;
+    public Sword(int a, int b){
+        durability = a;
+        damage = b;
+    }
+    public void removeDurability(){
+        durability--;
+    }
+}</pre>         
+                                </div>    
+                <br>
+                As you can see, fields are initiated without values outside of any function or constructor. Usually they get values in the constructor. The constuctor is usually underneath the fields. Methods change something in the object and are underneath the constructor. Note the brackets and no <b>public static void main(String[] args)</b><br><Br>
+                <div class="card">This is also just more information for you.</div>
+			</div>
+        
+			<div class = "dir">
+				<p class="step">10 - Fields</p>
+				<button class="next" onclick="next(11)">Next</button>
+				<button class="previous" onclick="previous(11)">Prev.</button>
+				<br><br><br>
+                <center><strong>Fields are variables associated with the object</strong></center>
+                <Br>
+                <div id="instructionpic" style = "margin-left:15px;margin-right:15px;">
+                                <pre>public class Sword {
+    int durability, damage;
+}</pre>         
+                                </div>   
+                <Br>
+                With fields, you can use commas to separate the different fields. These variables do not have values associated with them yet.<br><br>
+				<div class="card">
+                    Make a class of whatever you want. Make several fields in your class.
+                </div>
+			</div>
+
+			<div class = "dir">
+				<p class="step">11 - The Constructor</p>
+				<button class="next" onclick="next(12)">Next</button>
+				<button class="previous" onclick="previous(12)">Prev.</button>
+				<br><br><br>
+				<center><strong>The constructor initiates the object and assigns values</strong></center>
+                <br>
+                <div id="instructionpic" style = "margin-left:15px;margin-right:15px;">
+                                <pre>public class Sword {
+    int durability, damage;
+    public Sword(int a, int b){
+        durability = a;
+        damage = b;
+    }
+}</pre>         
+                                </div>    
+                <br>
+                The constructor takes in values and uses them in the code in the construction, so when you type in <b>Sword sword = new Sword(999,999);</b> then you will create a sword with 999 durability and 999 damage.
+                <br><br>
+                <div class="card">
+                Make a constructor for your class and give values to all your fields inside the constructor.
+                </div> 
+			</div>
+
+			<!--End basic JavaScript Tutorials, Steps 1-5-->
+
+
+			<!--Below is where user gets Snake code and learns how to save code-->
+
+			<div class = "dir">
+				<p class="step">12 - Methods</p>
+				<button class="next" onclick="next(13)">Next</button>
+				<button class="previous" onclick="previous(13)">Prev.</button>
+				<br><br><br>
+                <center><strong>The constructor initiates the object and assigns values</strong></center>
+                <Br>
+                <div id="instructionpic" style = "margin-left:15px;margin-right:15px;">
+                                <pre>public class Sword {
+    int durability, damage;
+    public int removeDurability(){
+        durability--;
+        return durability
+    }
+}</pre>         
+                                </div>  
+                    <br>
+                    Methods modify things in the class. There are 2 kinds of methods
+                    <li>void</li>
+                    <li>returned</li>
+                    <br>
+                    Voids don't return any variable. Returned methods are equal to the designated variable.
+                    <br><br>
+                <div class="card">Make a returned method and a void method in your class that modifies your fields.
+                </div>
+                <br>
+
+			</div>
+
+
+			<!--End copying code/final introduction-->
+
+
+			<!--Begin actual Snake coding-->
+
+			<div class = "dir">
+				<p class="step">13 - Using Methods</p>
+				<button class="next" onclick="next(14)">Next</button>
+				<button class="previous" onclick="previous(14)">Prev.</button>
+				<br><br><br>
+                Methods can be used by the class that has those methods.
+                <Br>
+                <div id="instructionpic" style = "margin-left:15px;margin-right:15px;">
+                                <pre>Sword swrd = new Sword(999,999);
+int x = swrd.removeDurability();</pre>         
+                                </div> 
+                    <br>
+                In the above case, we create a new Sword with the name <b>swrd</b> with 999 durability and 999 damage. We then make an integer equal to the durability after we remove the durability because <b>removeDurability()</b> returns an integer. Those lines of code do not have to be in the same class as the object, but it does have to be in either another function that is executed, or in the <b>main</b>.
+                    <Br><br>
+                    If the main is in the class that you're calling a method, then you can use <b>this</b>, which allows you to directly call the method for the general object.
+                <div class="card">
+                    Take a moment to finish your class and make some objects in a <b>main</b> method.
+                </div>
+			</div>
+
+
+
+				<!--End actual Snake coding-->
+
+
+				<!--Begin last word, goodbye-->
+
+            <div class = "dir">
+					<p class="step">You're Done!</p>
+					<button class="previous" type="button" onclick="step1()">Beginning</button>
+                    <button class="previous" type="button" onclick="previous(16)">Prev.</button>
+					<br><br>
+				    Congratulations on finishing this tutorial on the basics of Java!
+					<br><br>
+				    You now know most of what you need to know in order to make mods in Minecraft! Your class probably does nothing at the moment, but everything that you learned will be used in the next tutorial.
+				</div>
+
+
+
+
+</div>
+
+
+<div id="editor">public void doNothing() {
+    var x = "this is some cool java code";
+    System.out.println(x);
+}</div>
+    
+<script src="ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/java");
+    editor.setOptions({fontSize: "1em"});
+</script>
+
+
+
+</body>
+
+</html>
