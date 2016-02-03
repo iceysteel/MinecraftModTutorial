@@ -6,12 +6,8 @@ var async = require('async');
 var socketio = require('socket.io');
 var express = require('express');
 
-//
-// ## SimpleServer `SimpleServer(obj)`
-//
-// Creates a new instance of SimpleServer with the following options:
-//  * `port` - The HTTP port to listen on. If `process.env.PORT` is set, _it overrides this value_.
-//
+var dl  = require('delivery');
+
 var router = express();
 var server = http.createServer(router);
 var io = socketio.listen(server);
@@ -27,6 +23,9 @@ io.on('connection', function (socket) {
     console.log(socket.id);
     
     
+    
+    //heh welcome to nested call HELL
+    
     socket.on('code submit', function(code) {
         console.log("got code");
         //do something with the code
@@ -34,11 +33,40 @@ io.on('connection', function (socket) {
         
         fs.mkdir(__dirname + '/tmp/' + socket.id ,function(err){
            if (err) {
-               return console.error(err);
+               console.log(err);
            }
            console.log("Directory created successfully!");
+           
+           console.log("Going to create and write file for client: " + socket.id );
+            //now write the data to the file
+            fs.writeFile(__dirname + '/tmp/' + socket.id + '/' + 'main.java', code,  function(err) {
+               if (err) {
+                   console.log(err);
+               }
+               console.log("Data written successfully!");
+              //ok now lets turn that file into a .jar
+              //TODO: add jar creation code here
+              
+              //for now lets just send a file back to our user
+              
+              //res.sendfile(__dirname + "/tmp/" + socket.id + '/' + "main.java" );
+              
+              
+
+                
+          
+              
+              
+              // delivery.send({
+              //   name: 'banana.java',
+              //   path : __dirname + "/tmp/" + socket.id + '/' + "main.java"
+              // });
+              
+           });
         });
     });
+    
+    
     
     socket.on('disconnect', function () {
       sockets.splice(sockets.indexOf(socket), 1);

@@ -31,16 +31,13 @@ var socket = io.connect();
 
 //this stuff happens when the server sends the client something
 
-/*
-socket.on('connect', function () {
-  $scope.setName();
-});
+
 
 socket.on('message', function (msg) {
   $scope.messages.push(msg);
   $scope.$apply();
 });
-*/
+
 
 
 //this happens when our lovely user smashes that submit button
@@ -49,3 +46,23 @@ function submitCode(){
 	socket.emit('code submit', editor.getValue());
 	console.log("successfully sent code :)");
 }
+
+socket.on('connect', function () {
+	
+  var delivery = new Delivery(socket);
+  
+  delivery.on('receive.start',function(fileUID){
+      console.log('receiving a file!');
+    });
+ 
+  delivery.on('receive.success',function(file){
+    var params = file.params;
+    if (file.isImage()) {
+      $('img').attr('src', file.dataURL());
+    };
+  });
+  
+  //end on connect
+});
+
+
