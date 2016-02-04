@@ -6,7 +6,7 @@
 
 	<link rel="stylesheet" type="text/css" href="main.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	<script src="script.js"></script>
+
 
 </head>
 
@@ -20,10 +20,7 @@
 			<p>How to make a Minecraft Mod</p>
 
 	</div>
-
-
-
-	<div id="instructions">
+  <div id="instructions">
 
 
 		<!--Intro step, description/overview-->
@@ -86,7 +83,7 @@
                 <br><br><br>
 			<br>
                 Next we have to add our block to the GameRegistry. The GameRegistry organizes all of the blocks in the game and makes sure that each block has a different name. To register the game we will call the registerBlock function.
-            <br>					
+            <br>
             <center><b>GameRegistry.registerBlock(this, name);</b></center>
             <br>
 			You probably noticed that there is two different arguments inside the parentheses: this and name. <i>this</i> tells the GameRegistry that we are registering the block we are currently constructing, the trampoline. If you look above the constructor, you can see we declared a variable with the name TrampolineBlock.<i>name</i> gives the GameRegistry the name we want to use for the block.
@@ -235,14 +232,60 @@
 		<!--Begin last word, goodbye-->
         <div class = "dir">
             <p class="step">You're Done!</p>
-			<button class="previous" type="button" onclick="step1()">Beginning</button>
+			<button class="next" type="button" onclick="next(12)">Next</button>
             <button class="previous" type="button" onclick="previous(12)">Prev.</button>
 			<br><br>
 			Congratulations on finishing your first Minecraft Mod!
-			<br><br>
+            <br>
+            Now we will go through how to install your mod into Minecraft.
+			</div>
+        <div class= "dir">
+            <p class="step">Installing Forge</p>
+            <button class="next" type="button" onclick="next(13)">Next</button>
+            <button class="previous" type="button" onclick="previous(13)">Prev.</button>
+            <br><br><br>
+            First, you'll need to install Minecraft Forge. Minecraft Forge is a community made tool used to easily create and install mods and helps them work together. 
+            <br>
+            First head over to <a href="http://files.minecraftforge.net/">Forge's Download page</a> and download the recommended installer. 
+            <br><br>
+            Once you download the installer. Run the installer using Java by selecting 'Open With' Java.
+            <div class = "card">
+                Download the installer from <a href="http://files.minecraftforge.net/">http://files.minecraftforge.net/</a>
+                <br>
+                Run the installer using java.
+                </div>
+            </div>
+        <div class = "dir">
+            <p class = "step">Installing the Mod</p>
+            <button class="next" type="button" onclick="next(14)">Next</button>
+            <button class="next" type="button" onclick="window.location.href='/TrampolineMod-1.0.jar'">Submit Code</button>
+            <button class="previous" type="button" onclick="previous(14)">Prev.</button>
+            <br><br><br>
+            Next we need to install our mod.
+            <br>
+            If you click on the "Submit Code" button, we will process your code and give you the mod file as a .jar.
+            <br>
+            <br><b>Windows</b><br>
+            1. Go to the start menu, type "run", and press enter.<br>
+            2. In the window that pops up type "%AppData%".<br>
+            3. The file explorer will popup and you need to go to the folder named "minecraft".<br>
+            <br><b>Mac</b><br>
+            1. Open Finder.<br>
+            2. Hold down ALT and click "Go" then "Library" in the top menu bar.<br>
+            3. Open the folder "Application Support" and then for the "minecraft" folder.<br>
+            <br><b>Both</b><br>
+            4. Next you need to open the "mods" folder.<br>
+            5. Finally you need to drag the jar file you created into this mod folder.<br>
+            </div>
+        <div class="dir">
+            <p class = "step">Congratulations!</p>
+            <button class="next" type="button" onclick="step1()">Beginning</button>
+            <button class="previous" type="button" onclick="previous(15)">Prev.</button>
+            <br><br><br>
+            Congratulations on creating and installing your fist mod!
+            <br><br>
             If you would like to learn more about how to code more mods that you did not do in this session, feel free to contact knodemy at <a target = "_blank" href="knodemy.com">our website</a>, and we will give you lessons on more advanced coding.
 			</div>
-
 
 
 
@@ -278,38 +321,36 @@ public class TrampolineMod
     public static final String MODID = "trampolinemod";
     public static final String VERSION = "1.0";
 	public static Block trampolineBlock;
-	public static List<Object> namesList = new ArrayList<Object>();
-    
+
     @EventHandler
     public void preinit(FMLPreInitializationEvent event){
-    
+
     }
-    
+
     @EventHandler
     public void init(FMLInitializationEvent event){
-    
+
     }
-    
-    
+
+
     //TrampolineBlock class that contains code for the block itself.
     public class TrampolineBlock extends Block {
     	private static final String name = "TrampolineBlock";
-        
+
         //Make the constructor under here!
-    
-    
+
+
         //Make the onFallenUpon function here!
-    
-    
+
+
     	public String getName(){
     	return name;
     	}
     }
-    
+
 }
     </div>
 
-</body>
 <script src="ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
     var editor = ace.edit("editor");
@@ -317,4 +358,11 @@ public class TrampolineMod
     editor.getSession().setMode("ace/mode/java");
     editor.setOptions({fontSize: "1em"});
 </script>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/delivery.js"></script>
+<script src="script.js"></script>
+
+</body>
+
 </html>
