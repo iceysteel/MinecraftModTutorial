@@ -6,7 +6,7 @@
 
 	<link rel="stylesheet" type="text/css" href="main.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	
+
 
 </head>
 
@@ -18,12 +18,9 @@
 
 
 			<p>How to make a Minecraft Mod</p>
-            
+
 	</div>
-
-
-
-	<div id="instructions">
+  <div id="instructions">
 
 
 		<!--Intro step, description/overview-->
@@ -37,57 +34,8 @@
             </p>
             <br><br>
 				To the right you will see the Knodemy Java code editor. This is where you will be writing your code.<br>
-                In order to run code scroll down in the editor section untill you see the green button. <br>
-                  This is the run button and you will press it to run your code.<br>
-                Below the run button there is a grey area which is where the output of your code will be displayed.<br>
 				<br><br>
-
-            <div class="card">
-				<br><br>
-            Copy the code in the textbox below and paste it into the editor (<a target = "_blank" href="screenshots/copypasta.gif">How?</a>)
-            <br><br>
-
-
-<!-- Code from js.do/code/68548 Spacing here is important don't change...-->
-				<center>
-				    <textarea id ="templatecode" onclick="this.focus();this.select()" readonly="readonly">
-playagain = True
-sword = False
-print("You are the great hero, Zain.")
-while(playagain):
-    print("You are in a village.")
-    print("A dragon is attacking.")
-    print("Will you fight the dragon?")
-    response = raw_input("y/n :")
-    if (response == "y" and sword == False):
-        print("You attempted to fight a dragon without a weapon.")
-        print("That was a bad choice, you lose.")
-        playagain = False
-    elif (response == "y" and sword == True):
-        print("You have defeated the dragon!")
-        print("You really are the great hero Zain.")
-        print("You win!")
-        playagain = False
-    else:
-        print("There are two paths. Go (L)eft or (R)ight?")
-        response = raw_input()
-        while (response != "L" and response != "R"):
-            print ("invalid response.")
-            print("There are two paths. Go (L)eft or (R)ight?")
-            response = raw_input()
-        if (response == "L"):
-            print("You walk and...")
-            print("You end up at the beginning of the story.")
-            print("You are the great hero, Zain.")
-        elif (response == "R"):
-            print("You find a sword in the bushes and head back to the village")
-            sword = True
-                    </textarea>
-                </center>
-            <br><br>
-            Go ahead and press the green button to run your code and play the game we will be making. After you're done press next to go to the next step.
-                </div>
-		</div>
+        </div>
 
         <!--Begin first block of Minecraft Mod -->
 
@@ -98,17 +46,14 @@ while(playagain):
                 <br><br><br>
 				Okay, lets get started learning to mod!
                 <br><br>
-                Here we have our blank Block class. We need to create a constructor, so that Minecraft knows what to do when we craft this block. To do this we will create a constructor. A constructor describes what to do every time our block is created in the game. In the constructor we will describe the basics details of the trampoline block.
+                At the bottom of the existing file, you can see the blank Block class denoted by the line: <i> public class TrampolineBlock extends Block </i> We need to create a constructor for the block, so that Minecraft knows what to do when we spawn this block. A constructor describes what to do every time our block is created in the game. In the constructor we will describe the basic details of the trampoline block.
 				<br><br>
-				We can do this by creating a constructor.<br>
+				We can do this by creating a constructor below the line denoted by the comment.<br>
                 <center><b>public TrampolineBlock(){}</b></center>
 				<br><br>
 				<div class="card">
-
-                    Delete the code from before and
                     <p>
-                    try making your computer print something!<br><br>
-                    type <br>
+                    Type <br>
                         <b>public TrampolineBlock(){}</b>
                     <br>
                     </p>
@@ -116,144 +61,148 @@ while(playagain):
 
                 </div>
 		</div>
-
-            <div class = "dir">
+        <div class = "dir">
 			<p class="step">2 - Defining a Constructor </p>
 			<button class="next" type="button" onclick="next(3)">Next</button>
 			<button class="previous" onclick="previous(3)">Prev.</button>
 			<br><br><br>
-                First, we’ll inherit the qualities of an existing block. There is no need to make a completely new set of rules, so we will use the rules from another block, specifically from sand. We’re using sand, because it’s easy to break with just your hands. To do this we must call the constructor of the generic block to use the sand material.
+                Now in between the curly braces of the constructor, we will describe the basic behavior of our Trampoline block. First, we’ll inherit the qualities of an existing block. There is no need to make a completely new set of rules, so we will use the rules from another block, specifically sand. We’re using sand, because it’s easy to break with just your hands in Minecraft. To do this we must call the constructor of the generic block to use the sand material.
                 <br>
                 <center><b>super(Material.sand);</b></center>
                 <br>
-                Next we have to add our block to the GameRegistry. The GameRegistry organizes all of the blocks in the game and makes sure that each block has a different name. To register the game we will call the registerBlock function.
-                <br>
-                <br>
-                <center><b>GameRegistry.registerBlock(this, name);</b></center>
                 <div class="card">
                     1. Add all of these lines to your constructor:
                     <br>
                     		super(Material.sand);<br>
-		GameRegistry.registerBlock(this, name);<br>
                 </div>
-							</div>
-                <div class = "dir">
-			<p class = "step">3 - Finishing the Constructor</p>
+        </div>
+        <div class = "dir">
+			<p class = "step">2 - Defining a Constructor</p>
 			<button class="next" type="button" onclick="next(4)">Next</button>
 			<button class="previous" onclick="previous(4)">Prev.</button>
                 <br><br><br>
-								<br>
-								You probably noticed that there is two different arguments inside the parentheses: this and name. <i>this</i> tells the GameRegistry that we are registering the block we are currently constructing, the trampoline. If you look above the constructor, you can see we declared a variable with the name TrampolineBlock.<i>name</i> gives the GameRegistry the name we want to use for the block.
-								<br>
-Also, we need to set the name of the block for the other parts of the game. To do that we just need this one line:
-								<br>
-								<br>
-								<center><b>setUnlocalizedName(name);</b></center>
-								<br>
-								<br>
-								Finally we will tell Minecraft where our block belongs in creative mod. You’ve probably noticed that there are different tabs in your creative inventory that make it easy to find the item or block you want. Since our trampoline is a block, we will put it in the block category.
-								<br>
-								<br>
-								<center><b>setCreativeTab(CreativeTabs.tabBlock);</b></center>
-								<br><div class="card">
-                    <p>!. Add these lines to your constructor.
-										setUnlocalizedName(name);<br>
-										setCreativeTab(CreativeTabs.tabBlock);<br>
-                    <br>
-                    </p>
-                </div>
+			<br>
+                Next we have to add our block to the GameRegistry. The GameRegistry organizes all of the blocks in the game and makes sure that each block has a different name. To register the game we will call the registerBlock function.
+            <br>
+            <center><b>GameRegistry.registerBlock(this, name);</b></center>
+            <br>
+			You probably noticed that there is two different arguments inside the parentheses: this and name. <i>this</i> tells the GameRegistry that we are registering the block we are currently constructing, the trampoline. If you look above the constructor, you can see we declared a variable with the name TrampolineBlock.<i>name</i> gives the GameRegistry the name we want to use for the block.
+			<br>
+            <br>
+            <div class="card">
+                <p>Add these lines to your constructor.<br>
+		        GameRegistry.registerBlock(this, name);<br>
+                </p>
+            </div>
 		</div>
-
-<!--Switch from Block class to Mod class.-->
-			<div class = "dir">
-				<p class="step">4 - Connecting the Block and Mod</p>
-				<button class="next" onclick="next(5)">Next</button>
-				<button class="previous" onclick="previous(5)">Prev.</button>
-				<br> <br><br>
-               Now we're going to work on the main mod class.
+        <div class = "dir">
+			<p class = "step">3 - Completing the Constructor</p>
+			<button class="next" type="button" onclick="next(5)">Next</button>
+			<button class="previous" onclick="previous(5)">Prev.</button>
+            <br><br><br>
+			Also, we need to set the name of the block for the other parts of the game. To do that we just need this one line:
+			<br>
+			<br>
+			<center><b>setUnlocalizedName(name);</b></center>
+			<br>
+			<br>
+			Finally we will tell Minecraft where our block belongs in creative mod. You’ve probably noticed that there are different tabs in your creative inventory that make it easy to find the item or block you want. Since our trampoline is a block, we will put it in the block category.
+			<br>
+			<br>
+			<center><b>setCreativeTab(CreativeTabs.tabBlock);</b></center>
+			<br>
+            <div class="card">
+                <p>Add these lines to your constructor.
+				setUnlocalizedName(name);<br>
+				setCreativeTab(CreativeTabs.tabBlock);<br>
                 <br>
-                <br>
-                Our block has been created, but Minecraft does not know our block exists! As a result, we need to create a mod class to get the game’s attention. The Mod class’s purpose is to tell Minecraft about all the items and blocks in our mod and how to access those things. As you can see, there are already two functions in the file: preinit and init.
-                <br><br>
-                Before the Minecraft world loads up, we need to tell the game what our mod includes. That is what the the preinit function does; it tells Minecraft what blocks and items we are adding and puts them in the GameRegistry. In our preinit, we only need one line, because we only have one block. This line will create an instance of our block.
-                <br><br>
-                <center><b>trampolineBlock = new TrampolineBlock();</b></center>
-                <br><br>
-                <div class="card">
+                </p>
+            </div>
+		</div>
+        <div class = "dir">
+			<p class="step">4 - Connecting the Block and Mod</p>
+			<button class="next" onclick="next(6)">Next</button>
+			<button class="previous" onclick="previous(6)">Prev.</button>
+			<br> <br><br>
+            Now we're going to work on the main mod class.<br>
+            If you scroll up, you can see the mod class indicated by the line <i>public class TrampolineMod</i>
+            <br>
+            <br>
+            Our block has been defined, but Minecraft does not know our block exists! As a result, we need to create a mod class to get the game’s attention. The TrampolineMod class’s purpose is to tell Minecraft about all the items and blocks in our mod and how to access those things. As you can see, there are already two functions in the file: preinit and init.
+            <br><br>
+            Before the Minecraft world loads up, we need to tell the game what our mod includes. That is what the the preinit function does; it tells Minecraft what blocks and items we are adding and puts them in the GameRegistry. In our preinit, we only need one line, because we only have one block. This line will create an instance of our block.
+            <br><br>
+            <center><b>trampolineBlock = new TrampolineBlock();</b></center>
+            <br><br>
+            <div class="card">
                     Add this line to the preinit() function.<br>
                     trampolineBlock = new TrampolineBlock();
-                </div>
-			</div>
-
-			<div class = "dir">
-				<p class="step">5 - Recipe Components</p>
-				<button class="next" onclick="next(6)">Next</button>
-				<button class="previous" onclick="previous(6)">Prev.</button>
-				<br><br><br>
-                Next we have the init function. This is where the mod is set-up and where we will describe the recipe to create the trampoline block. First we need to define what will be created with this recipe. Obvioiusly we want to create the trampoline block.
-<br><br>
-<center><b>ItemStack i = new ItemStack(trampolineBlock)</b></center>
-<br><br>
-                Next, we need to describe the recipe. Those of you who have played Minecraft before know that the crafting table provides a 3 by 3 grid of squares to place ingredients in. We will define our recipe in as if it were a 3 by 3 grid.
-<br><br>
-
-                <div class="card">
-                    1. Create an ItemStack<br>
-                    ItemStack i = new ItemStack(trampolineBlock)<br>
-                </div>
-
             </div>
-						<div class = "dir">
-							<p class="step">6 - Creating the Recipe </p>
-							<button class="next" onclick="next(7)">Next</button>
-							<button class="previous" onclick="previous(7)">Prev.</button>
-							<br><br><br>
-			 <center><b>Object recipe = new Object[]{<br>
+        </div>
+		<div class = "dir">
+			<p class="step">5 - Recipe Components</p>
+			<button class="next" onclick="next(7)">Next</button>
+			<button class="previous" onclick="previous(7)">Prev.</button>
+			<br><br><br>
+            Next we have the init function. This is where the mod is set-up and where we will describe the recipe to create the trampoline block. First we need to define what will be created with this recipe. Obvioiusly we want to create the trampoline block.
+            <br><br>
+            <center><b>ItemStack i = new ItemStack(trampolineBlock);</b></center>
+            <br>
+            <div class="card">
+                1. Create an ItemStack<br>
+                ItemStack i = new ItemStack(trampolineBlock);<br>
+            </div>
+            </div>
+		<div class = "dir">
+			<p class="step">6 - Creating the Recipe </p>
+			<button class="next" onclick="next(8)">Next</button>
+			<button class="previous" onclick="previous(8)">Prev.</button>
+            <br><br><br>
+            Next, we need to describe the recipe. Those of you who have played Minecraft before know that the crafting table provides a 3 by 3 grid of squares to place ingredients in. We will define our recipe in as if it were a 3 by 3 grid. This recipe also goes in the init function.
+            <br>
+            <center><b>Object recipe = new Object[]{<br>
 			“PPP”,<br>
 			“PWP”,<br>
 			“PPP”,<br>
-			}
+			};
 			</b></center>
 			<br>
 			Notice I split up the recipe onto different lines, so it is easier to recognize as a 3 by 3 grid. Instead of writing out the name of each item, we are using the letters P and W to stand for wooden planks and wool, respectively. So our recipe stands for a block of wool, surrounded by wooden planks. Now that you understand that, we must tell Minecraft what our letters mean. These two elements go in the Object array after the last comma.
-			<br><br>
+			<br>
 			<center><b>'P', Blocks.planks, ‘W’, Blocks.wool</b></center>
-			<br><br>
-			                <div class="card">
-			                    1. Your recipe Object Array should look like this:<br>
-			                    Object recipe = new Object[]{<br>
+			<br>
+            <div class="card">
+			1. Your recipe Object Array should look like this:<br>
+			Object recipe = new Object[]{<br>
 			“PPP”,<br>
 			“PWP”,<br>
 			“PPP”,<br>
 			'P', Blocks.planks, 'W', Blocks.wool<br>
-			}
-			                </div>
-
-			            </div>
-<div class = "dir">
-				<p class="step">7 - Finalizing the Recipe</p>
-				<button class="next" onclick="next(8)">Next</button>
-				<button class="previous" onclick="previous(8)">Prev.</button>
-				<br><br><br>
-          Finally, we need to put the result and the recipe together and register them. Like before where we registered to block with the GameRegistry, we need to register our recipe with the GameRegistry using the ItemStack and Object array we just created.
-<br><br>
-<center><b>GameRegistry.addRecipe(i, recipe);</b></center>
-<br><br>
-That’s it! Our recipe is done!
-                <div class="card">
-                1.Register the recipe:<br>
-                    GameRegistry.addRecipe(i, recipe);<br>
-
-                </div>
-
+			};
+			</div>
+        </div>
+        <div class = "dir">
+            <p class="step">7 - Finalizing the Recipe</p>
+			<button class="next" onclick="next(9)">Next</button>
+			<button class="previous" onclick="previous(9)">Prev.</button>
+			<br><br><br>
+            Finally, we need to associate the block and the recipe together and register the connection. Like before where we registered to block with the GameRegistry, we need to register our recipe with the GameRegistry using the ItemStack and Object array we just created.This line still goes in the init function.
+            <br><br>
+            <center><b>GameRegistry.addRecipe(i, recipe);</b></center>
+            <br><br>
+            That’s it! Our recipe is done!
+            <div class="card">
+            1.Register the recipe:<br>
+            GameRegistry.addRecipe(i, recipe);<br>
             </div>
-            <div class = "dir">
+            </div>
+        <div class = "dir">
 				<p class="step">8 - Bounciness</p>
-				<button class="next" onclick="next(9)">Next</button>
-				<button class="previous" onclick="previous(9)">Prev.</button>
+				<button class="next" onclick="next(10)">Next</button>
+				<button class="previous" onclick="previous(10)">Prev.</button>
 				<br><br><br>
                 We have defined our block, added it to a mod, and created the recipe. Now to finish it off, we need to make it bouncy. On a trampoline, you can only bounce if you jump on it. So we need to call a function that will make the character bounce if you jump on it. The function we need is called <i>onFallenUpon</i>.<br><br>
-                We can create the function with this line of code:<br><br>
+                Return your focus to the block class below. We can create the function below the respective comment with this line of code:<br><br>
                 <center><b>public void onFallenUpon(World world, BlockPos bp,  Entity entity, float f){}</b></center>
                 <br><br>
                 There are a lot of arguments there, but we only are worried about the entity. entity refers to any living thing that jumps on our trampoline block.
@@ -264,46 +213,143 @@ That’s it! Our recipe is done!
                 </div>
 
             </div>
-						<div class = "dir">
-				<p class="step">9 - Bounciness Continued!</p>
-				<button class="next" onclick="next(10)">Next</button>
-				<button class="previous" onclick="previous(10)">Prev.</button>
-				<br><br><br>
-								To move the player, we will tell the entity to move itself using its moveEntity function. So inside the function's brackets, add this line.
-<br><br>
-<center><b>entity.moveEntity(entity.serverPosX, entity.serverPosY+5, entity.serverPosZ);</b></center>
-<br><br>
-As you can see, we refer to the entity many times in that line. we don’t want to move the player horizontally, so we do not change its server position on the x or z axes. The y-position or its vertical position is what we want to change, so we add five to its current position.
-								<br><br>
-								<div class="card">
-										2.Call the <i>moveEntity</i> function from that function:<br>
-										entity.moveEntity(entity.serverPosX, entity.serverPosY+5, entity.serverPosZ);<br>
-
-								</div>
-
-						</div>
-				<!--Begin last word, goodbye-->
-
-            <div class = "dir">
-					<p class="step">You're Done!</p>
-					<button class="next" type="button" onclick="window.location.href='/TrampolineMod-1.0.jar'">Submit Code</button>
-                    <button class="previous" type="button" onclick="previous(11)">Prev.</button>
-					<br><br>
-				    Congratulations on finishing your first Minecraft Mod!
-					<br><br>
-                If you would like to learn more about how to code more mods that you did not do in this session, feel free to contact knodemy at <a target = "_blank" href="knodemy.com">our website</a>, and we will give you lessons on more advanced coding.
-				</div>
-
+		<div class = "dir">
+            <p class="step">9 - Bounciness Continued!</p>
+			<button class="next" onclick="next(11)">Next</button>
+			<button class="previous" onclick="previous(11)">Prev.</button>
+			<br><br><br>
+			To move the player, we will tell the entity to move using its moveEntity function. So between the brackets of the function you created in the last step. Add this line.
+            <br><br>
+            <center><b>entity.moveEntity(entity.serverPosX, entity.serverPosY+5, entity.serverPosZ);</b></center>
+            <br><br>
+            As you can see, we refer to the entity many times in that line. we don’t want to move the player horizontally, so we do not change its server position on the x or z axes. The y-position or its vertical position is what we want to change, so we add five to its current position.
+			<br><br>
+			<div class="card">
+            1.Call the <i>moveEntity</i> function from that function:<br>
+			entity.moveEntity(entity.serverPosX, entity.serverPosY+5, entity.serverPosZ);<br>
+			</div>
+        </div>
+		<!--Begin last word, goodbye-->
+        <div class = "dir">
+            <p class="step">You're Done!</p>
+			<button class="next" type="button" onclick="next(12)">Next</button>
+            <button class="previous" type="button" onclick="previous(12)">Prev.</button>
+			<br><br>
+			Congratulations on finishing your first Minecraft Mod!
+            <br>
+            Now we will go through how to install your mod into Minecraft.
+			</div>
+        <div class= "dir">
+            <p class="step">Installing Forge</p>
+            <button class="next" type="button" onclick="next(13)">Next</button>
+            <button class="previous" type="button" onclick="previous(13)">Prev.</button>
+            <br><br><br>
+            First, you'll need to install Minecraft Forge. Minecraft Forge is a community made tool used to easily create and install mods and helps them work together. 
+            <br>
+            First head over to <a href="http://files.minecraftforge.net/">Forge's Download page</a> and download the recommended installer. 
+            <br><br>
+            Once you download the installer. Run the installer using Java by selecting 'Open With' Java.
+            <div class = "card">
+                Download the installer from <a href="http://files.minecraftforge.net/">http://files.minecraftforge.net/</a>
+                <br>
+                Run the installer using java.
+                </div>
+            </div>
+        <div class = "dir">
+            <p class = "step">Installing the Mod</p>
+            <button class="next" type="button" onclick="next(14)">Next</button>
+            <button class="next" type="button" onclick="window.location.href='/TrampolineMod-1.0.jar'">Submit Code</button>
+            <button class="previous" type="button" onclick="previous(14)">Prev.</button>
+            <br><br><br>
+            Next we need to install our mod.
+            <br>
+            If you click on the "Submit Code" button, we will process your code and give you the mod file as a .jar.
+            <br>
+            <br><b>Windows</b><br>
+            1. Go to the start menu, type "run", and press enter.<br>
+            2. In the window that pops up type "%AppData%".<br>
+            3. The file explorer will popup and you need to go to the folder named "minecraft".<br>
+            <br><b>Mac</b><br>
+            1. Open Finder.<br>
+            2. Hold down ALT and click "Go" then "Library" in the top menu bar.<br>
+            3. Open the folder "Application Support" and then for the "minecraft" folder.<br>
+            <br><b>Both</b><br>
+            4. Next you need to open the "mods" folder.<br>
+            5. Finally you need to drag the jar file you created into this mod folder.<br>
+            </div>
+        <div class="dir">
+            <p class = "step">Congratulations!</p>
+            <button class="next" type="button" onclick="step1()">Beginning</button>
+            <button class="previous" type="button" onclick="previous(15)">Prev.</button>
+            <br><br><br>
+            Congratulations on creating and installing your fist mod!
+            <br><br>
+            If you would like to learn more about how to code more mods that you did not do in this session, feel free to contact knodemy at <a target = "_blank" href="knodemy.com">our website</a>, and we will give you lessons on more advanced coding.
+			</div>
 
 
 
 </div>
 
+<div id="editor">package com.trampoline;
 
-<div id="editor">public void doNothing() {
-    var x = "this is some cool java code";
-    System.out.println(x);
-}</div>
+import java.util.ArrayList;
+import java.util.List;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.RenderItem;
+import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
+import net.minecraft.world.World;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+
+@Mod(modid = TrampolineMod.MODID, version = TrampolineMod.VERSION)
+public class TrampolineMod
+{
+    public static final String MODID = "trampolinemod";
+    public static final String VERSION = "1.0";
+	public static Block trampolineBlock;
+
+    @EventHandler
+    public void preinit(FMLPreInitializationEvent event){
+
+    }
+
+    @EventHandler
+    public void init(FMLInitializationEvent event){
+
+    }
+
+
+    //TrampolineBlock class that contains code for the block itself.
+    public class TrampolineBlock extends Block {
+    	private static final String name = "TrampolineBlock";
+
+        //Make the constructor under here!
+
+
+        //Make the onFallenUpon function here!
+
+
+    	public String getName(){
+    	return name;
+    	}
+    }
+
+}
+    </div>
 
 <script src="ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
